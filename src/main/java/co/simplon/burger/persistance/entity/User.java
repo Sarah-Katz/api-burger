@@ -40,7 +40,7 @@ public class User {
     /**
      * @param idUser The user's id to set
      */
-    public void setIdUser(int idUser) {
+    public void setIdUser(final int idUser) {
         this.idUser = idUser;
     }
 
@@ -54,7 +54,7 @@ public class User {
     /**
      * @param username The user's username to set
      */
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
@@ -68,7 +68,7 @@ public class User {
     /**
      * @param email The user's email to set
      */
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -82,7 +82,7 @@ public class User {
     /**
      * @param password The user's password to set
      */
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
@@ -96,7 +96,7 @@ public class User {
     /**
      * @param city The user's city to set
      */
-    public void setCity(String city) {
+    public void setCity(final String city) {
         this.city = city;
     }
 
@@ -110,7 +110,7 @@ public class User {
     /**
      * @param avatar The user's avatar to set
      */
-    public void setAvatar(String avatar) {
+    public void setAvatar(final String avatar) {
         this.avatar = avatar;
     }
 }
