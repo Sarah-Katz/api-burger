@@ -28,6 +28,9 @@ public class Transaction {
     @Column(name = "is_paid", nullable = false)
     private boolean isPaid;
 
+    @Column(name = "id_buyer", nullable = false)
+    private int idBuyer;
+
     @Column(name = "transaction_date", nullable = false)
     private Date transactionDate;
 
@@ -77,6 +80,20 @@ public class Transaction {
      */
     public void setPaid(final boolean isPaid) {
         this.isPaid = isPaid;
+    }
+
+    /**
+     * @return the idBuyer
+     */
+    public int getIdBuyer() {
+        return idBuyer;
+    }
+
+    /**
+     * @param idBuyer the idBuyer to set
+     */
+    public void setIdBuyer(final int idBuyer) {
+        this.idBuyer = idBuyer;
     }
 
     /**
