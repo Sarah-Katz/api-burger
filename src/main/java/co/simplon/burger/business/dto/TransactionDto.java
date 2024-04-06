@@ -3,7 +3,7 @@ package co.simplon.burger.business.dto;
 import java.util.Date;
 import java.util.List;
 
-public class Transaction {
+public class TransactionDto {
     private int idTransaction;
     private List<AdDto> ads;
     private boolean isPaid;
