@@ -1,70 +1,42 @@
-package co.simplon.burger.persistance.entity;
+package co.simplon.burger.business.dto;
 
 import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "transactions")
-public class Transaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_transaction")
+public class TransactionDto {
     private int idTransaction;
-
-    @ManyToMany
-    @JoinTable(name = "transaction_ad", joinColumns = @JoinColumn(name = "id_transaction"), inverseJoinColumns = @JoinColumn(name = "id_ad"))
-    private List<Ad> ads;
-
-    @Column(name = "is_paid", nullable = false)
+    private List<AdDto> ads;
     private boolean isPaid;
-
-    @Column(name = "id_buyer", nullable = false)
     private int idBuyer;
-
-    @Column(name = "transaction_date", nullable = false)
     private Date transactionDate;
-
-    @Column(name = "return_date", nullable = false)
     private Date returnDate;
-
-    @Column(name = "has_returned", nullable = false)
     private boolean hasReturned;
 
     /**
-     * @return the id
+     * @return the idTransaction
      */
-    public int getId() {
+    public int getIdTransaction() {
         return idTransaction;
     }
 
     /**
-     * @param id the id to set
+     * @param idTransaction the idTransaction to set
      */
-    public void setId(final int id) {
-        this.idTransaction = id;
+    public void setIdTransaction(final int idTransaction) {
+        this.idTransaction = idTransaction;
     }
 
     /**
      * @return the ads
      */
-    public List<Ad> getAds() {
+    public List<AdDto> getAds() {
         return ads;
     }
 
     /**
      * @param ads the ads to set
      */
-    public void setAds(final List<Ad> ads) {
+    public void setAds(final List<AdDto> ads) {
         this.ads = ads;
     }
 
@@ -97,14 +69,14 @@ public class Transaction {
     }
 
     /**
-     * @return the transactionDate
+     * @return the date of the transaction
      */
     public Date getTransactionDate() {
         return transactionDate;
     }
 
     /**
-     * @param transactionDate the transactionDate to set
+     * @param transactionDate the date of the transaction
      */
     public void setTransactionDate(final Date transactionDate) {
         this.transactionDate = transactionDate;
@@ -125,14 +97,14 @@ public class Transaction {
     }
 
     /**
-     * @return returns whether the items have been returned
+     * @return wether the items have been returned
      */
     public boolean isHasReturned() {
         return hasReturned;
     }
 
     /**
-     * @param hasReturned sets whether the items have been returned
+     * @param hasReturned wether the items have been returned
      */
     public void setHasReturned(final boolean hasReturned) {
         this.hasReturned = hasReturned;
