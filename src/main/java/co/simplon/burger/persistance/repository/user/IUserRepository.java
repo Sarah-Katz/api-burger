@@ -8,8 +8,15 @@ import org.springframework.stereotype.Repository;
 
 import co.simplon.burger.persistance.entity.User;
 
+/**
+ * Interface for {@link User} repository.
+ */
 @Repository
 public interface IUserRepository extends JpaRepository<User, Integer> {
+    /**
+     * @param username the username to search for
+     * @return a list of users with the given username
+     */
     @Query(UserQueries.FIND_BY_USERNAME)
     public List<User> findByUsername(final String username);
 }

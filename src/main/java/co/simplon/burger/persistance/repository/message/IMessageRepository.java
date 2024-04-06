@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import co.simplon.burger.persistance.entity.Message;
 
+/**
+ * Interface for {@link Message} repository.
+ */
 @Repository
 public interface IMessageRepository extends JpaRepository<Message, Integer> {
 }
