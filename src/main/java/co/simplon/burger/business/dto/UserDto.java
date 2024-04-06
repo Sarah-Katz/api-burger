@@ -18,7 +18,7 @@ public class UserDto {
     /**
      * @param idUser the idUser to set
      */
-    public void setIdUser(int idUser) {
+    public void setIdUser(final int idUser) {
         this.idUser = idUser;
     }
 
@@ -32,7 +32,7 @@ public class UserDto {
     /**
      * @param username the username to set
      */
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
@@ -46,7 +46,7 @@ public class UserDto {
     /**
      * @param email the email to set
      */
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -60,7 +60,7 @@ public class UserDto {
     /**
      * @param password the password to set
      */
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
@@ -74,7 +74,7 @@ public class UserDto {
     /**
      * @param city the city to set
      */
-    public void setCity(String city) {
+    public void setCity(final String city) {
         this.city = city;
     }
 
@@ -88,7 +88,7 @@ public class UserDto {
     /**
      * @param avatar the avatar source url to set
      */
-    public void setAvatar(String avatar) {
+    public void setAvatar(final String avatar) {
         this.avatar = avatar;
     }
 }
