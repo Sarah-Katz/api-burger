@@ -1,4 +1,4 @@
-FROM maven:3.9.6-eclipse-temurin-17-focal AS build
+FROM maven:3.9.4-eclipse-temurin-21-alpine AS build
 COPY . .
 RUN mvn clean install
 RUN mv /target/*.jar /target/api.jar
