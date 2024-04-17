@@ -1,4 +1,4 @@
-package co.simplon.burger.business.convert;
+package co.simplon.burger.unit.business.convert;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,10 +6,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import co.simplon.burger.business.convert.UserConvert;
 import co.simplon.burger.business.dto.UserDto;
 import co.simplon.burger.persistance.entity.User;
 
-public class UserConvertTest {
+class UserConvertTest {
     private static UserConvert userConvert = UserConvert.getInstance();
 
     @Test
