@@ -1,0 +1,13 @@
+name: Maven dependency tree submission
+on: push
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v2
+            - name: Maven Dependency Tree Dependency Submission
+              uses: advanced-security/maven-dependency-submission-action@v4.0.2
