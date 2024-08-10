@@ -3,9 +3,7 @@ package co.simplon.burger.business.convert;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.simplon.burger.business.dto.AdDto;
 import co.simplon.burger.business.dto.TransactionDto;
-import co.simplon.burger.persistance.entity.Ad;
 import co.simplon.burger.persistance.entity.Transaction;
 
 public class TransactionConvert {
@@ -39,9 +37,7 @@ public class TransactionConvert {
         
         // If there are ads, convert them
         if (transactionDto.getAds()!= null) {
-            for (final AdDto ad : transactionDto.getAds()) {
-                transaction.getAds().add(AdConvert.getInstance().toEntity(ad));
-            }
+            transactionDto.setAds(AdConvert.getInstance().listToDto(transaction.getAds()));
         }
         return transaction;
     }
@@ -61,9 +57,7 @@ public class TransactionConvert {
 
         // If there are ads, convert them
         if (transaction.getAds() != null) {
-            for (final Ad ad : transaction.getAds()) {
-                transactionDto.getAds().add(AdConvert.getInstance().toDto(ad));
-            }
+            transactionDto.setAds(AdConvert.getInstance().listToDto(transaction.getAds()));
         }
         return transactionDto;
     }
