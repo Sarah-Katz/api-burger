@@ -3,6 +3,8 @@ package co.simplon.burger.business.service.conversation;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import co.simplon.burger.business.convert.ConversationConvert;
 import co.simplon.burger.business.convert.UserConvert;
 import co.simplon.burger.business.dto.ConversationDto;
@@ -11,6 +13,7 @@ import co.simplon.burger.business.dto.TransactionDto;
 import co.simplon.burger.business.dto.UserDto;
 import co.simplon.burger.persistance.repository.conversation.IConversationRepository;
 
+@Service
 public class ConversationServiceImpl implements IConversationService {
     private IConversationRepository conversationRepository;
 
