@@ -24,17 +24,17 @@ public class AdServiceImpl implements IAdService {
     }
 
     @Override
-    public void saveAd(AdDto adDto) {
+    public void saveAd(final AdDto adDto) {
         adRepository.save(AdConvert.getInstance().toEntity(adDto));
     }
 
     @Override
-    public List<AdDto> getAllAdsForVendor(UserDto user) {
+    public List<AdDto> getAllAdsForVendor(final UserDto user) {
         return AdConvert.getInstance().listToDto(adRepository.findByVendor(UserConvert.getInstance().toEntity(user)));
     }
 
     @Override
-    public void deleteAd(int adId) {
+    public void deleteAd(final int adId) {
         adRepository.deleteById(adId);
     }
 }
