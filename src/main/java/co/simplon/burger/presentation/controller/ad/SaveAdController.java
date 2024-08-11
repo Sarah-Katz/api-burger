@@ -8,7 +8,6 @@ import co.simplon.burger.business.service.ad.IAdService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @CrossOrigin
 public class SaveAdController {
@@ -16,6 +15,7 @@ public class SaveAdController {
 
     /**
      * Dependencies injection for the Controller.
+     * 
      * @param adService
      */
     public SaveAdController(final IAdService adService) {
@@ -24,6 +24,7 @@ public class SaveAdController {
 
     /**
      * Creates or updates an ad if it already exists.
+     * 
      * @param ad the {@link AdDto} to be saved
      */
     @PostMapping("/ads")
