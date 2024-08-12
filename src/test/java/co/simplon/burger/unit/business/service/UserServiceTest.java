@@ -39,6 +39,16 @@ class UserServiceTest {
     }
 
     @Test
+    void getAllUsers() {
+        when(userRepository.findAll()).thenReturn(List.of(new User(), new User()));
+        List<UserDto> users = userService.getAllUsers();
+
+        // Verify that the findAll method was called once
+        verify(userRepository, times(1)).findAll();
+        assertTrue(!users.isEmpty());
+    }
+
+    @Test
     void testGetUsersByUsername() {
         when(userRepository.findByUsername(any(String.class))).thenReturn(List.of(new User(), new User()));
         List<UserDto> users = userService.getUsersByUsername("username");
