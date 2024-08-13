@@ -16,9 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 
 import co.simplon.burger.business.dto.AdDto;
-import co.simplon.burger.business.dto.UserDto;
 import co.simplon.burger.business.service.ad.IAdService;
-import co.simplon.burger.business.service.user.IUserService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource("classpath:application-tests.properties")
@@ -31,9 +29,6 @@ class AdIT {
 
     @Autowired
     private IAdService adService;
-
-    @Autowired
-    private IUserService userService;
 
     @BeforeEach
     void setUp() {
@@ -70,12 +65,15 @@ class AdIT {
         adDto.setPrice(9.99);
 
         ResponseEntity<String> res = this.restTemplate.postForEntity(getUrl("/ads"), adDto, String.class);
+        List<AdDto> ads = adService.getAllAds();
 
         assertEquals(HttpStatus.OK, res.getStatusCode());
+        assertEquals(3, ads.size());
+        assertEquals("Pasta Ad", ads.get(2).getTitle());
     }
 
     @Test
-    void getAllAds() throws Exception {
+    void getAllAds() {
         ResponseEntity<?> res = this.restTemplate.getForEntity(getUrl("/ads"), List.class);
 
         System.out.println(res);
