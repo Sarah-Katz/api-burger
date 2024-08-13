@@ -41,6 +41,16 @@ class AdServiceTest {
     }
 
     @Test
+    void testGetAllAds() {
+        when(adRepository.findAll()).thenReturn(List.of(new Ad(), new Ad()));
+        List<AdDto> ads = adService.getAllAds();
+
+        // Verify that the findAll method was called once
+        verify(adRepository, times(1)).findAll();
+        assertTrue(!ads.isEmpty());
+    }
+
+    @Test
     void testGetAdsByVendor() {
         UserDto user = new UserDto();
         when(adRepository.findByVendor(any(User.class))).thenReturn(List.of(new Ad(), new Ad()));

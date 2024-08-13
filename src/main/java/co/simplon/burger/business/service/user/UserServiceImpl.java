@@ -27,6 +27,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public List<UserDto> getAllUsers() {
+        return UserConvert.getInstance().listToDto(userRepository.findAll());
+    }
+
+    @Override
     public List<UserDto> getUsersByUsername(final String username) {
         return UserConvert.getInstance().listToDto(userRepository.findByUsername(username));
     }

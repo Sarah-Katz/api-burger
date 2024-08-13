@@ -29,6 +29,11 @@ public class AdServiceImpl implements IAdService {
     }
 
     @Override
+    public List<AdDto> getAllAds() {
+        return AdConvert.getInstance().listToDto(adRepository.findAll());
+    }
+
+    @Override
     public List<AdDto> getAllAdsForVendor(final UserDto user) {
         return AdConvert.getInstance().listToDto(adRepository.findByVendor(UserConvert.getInstance().toEntity(user)));
     }
